@@ -1,11 +1,11 @@
-insert into user(name,job) value ("Ivan", "Custover");
-insert into user(name,job) value ("Sergey","Customer");
-insert into user(name,job) value ("Darya","Customer");
-insert into user(name,job) value ("Tim","Employee");
-insert into user(name,job) value ("Natasha","Employee");
-insert into user(name,job) value ("Roman","Customer");
-insert into user(name,job) value ("Irina","Customer");
-insert into user(name,job) value ("David","Employee");
+insert into user(name, job) value ("Ivan", "Custover");
+insert into user(name, job) value ("Sergey","Customer");
+insert into user(name, job) value ("Darya","Customer");
+insert into user(name, job) value ("Tim","Employee");
+insert into user(name, job) value ("Natasha","Employee");
+insert into user(name, job) value ("Roman","Customer");
+insert into user(name, job) value ("Irina","Customer");
+insert into user(name, job) value ("David","Employee");
 
 insert into plane(number) value ("NT-567");
 insert into plane(number) value ("SRT-7612");
@@ -20,12 +20,12 @@ insert into city(name) value ("Antalya");
 insert into city(name) value ("St. Petersburg");
 insert into city(name) value ("St. Petersburg");
 
-insert into airport(name,city_id) value ("airport Minsk",1);
-insert into airport(name,city_id) value ("airport Gomel",2);
-insert into airport(name,city_id) value ("airport Moskow",3);
-insert into airport(name,city_id) value ("airport Antalya",4);
-insert into airport(name,city_id) value ("airport St. Petersburg",5);
-insert into airport(name,city_id) value ("airport Kaliningrad",6);
+insert into airport(name, city_id) value ("airport Minsk",1);
+insert into airport(name, city_id) value ("airport Gomel",2);
+insert into airport(name, city_id) value ("airport Moskow",3);
+insert into airport(name, city_id) value ("airport Antalya",4);
+insert into airport(name, city_id) value ("airport St. Petersburg",5);
+insert into airport(name, city_id) value ("airport Kaliningrad",6);
 
 insert into route value (1, 342, "2024-03-21 10:00:00", "2024-03-21 12:00:00", 1, 2, "2:00:00", 1, "planned", 342);
 insert into route value (2, 546, "2024-03-22 17:00:00", "2024-03-22 20:00:00", 3, 4, "3:00:00", 2, "planned", 587);
