@@ -51,21 +51,6 @@ public class Main {
         //delete by Id
         routeDao.deleteById(10);
 
-        //UserDao userDao = new UserDaoImpl();
-
-        //  List<User> user = userDao.getAll();
-
-        // User user = userDao.getById(2);
-
-        //List<User> user = userDao.getAllWithTicket();
-
-       /* User user = new User();
-        user.setName("Vladimir");
-        user.setJob("Customer");
-        userDao.save(user);*/
-
-        // userDao.deleteById(9);
-
         System.out.println("Hello world!");
     }
 }
