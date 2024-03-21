@@ -4,7 +4,7 @@ import lombok.Data;
 
 import java.sql.Time;
 import java.util.Date;
-import java.util.Timer;
+import java.util.List;
 
 @Data
 public class Route {
@@ -18,4 +18,7 @@ public class Route {
     private Integer plane_id;
     private String stat;
     private Integer price;
+    private List<City> cities1;
+    private List<City> cities2;
+    private List<Plane> planes;
 }

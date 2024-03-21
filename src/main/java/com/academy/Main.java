@@ -1,35 +1,70 @@
 package com.academy;
 
-import com.academy.model.DataSource;
+import com.academy.model.dao.RouteDao;
+import com.academy.model.dao.UserDao;
+import com.academy.model.dao.impl.RouteDaoImpl;
+import com.academy.model.dao.impl.UserDaoImpl;
+import com.academy.model.entity.Route;
 import com.academy.model.entity.User;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
+import java.sql.Time;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalTime;
+import java.util.Date;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws SQLException, ParseException {
 
-        Connection connection = DataSource.getInstance().getConnection();
+        RouteDao routeDao = new RouteDaoImpl();
 
-        PreparedStatement statement = connection.prepareStatement("select * from user");
+        // get all routes
+        List<Route> routes1 = routeDao.getAll();
 
-        ResultSet result = statement.executeQuery();
+        // get by Id routes
+        Route route = routeDao.getById(2);
 
-        List<User> users = new ArrayList<>();
+        // all routes width cites and plane
+        List<Route> routes = routeDao.getAllWithCitesAndPlane();
 
-        User user = null;
-        while (result.next()) {
-            user = new User();
-            user.setId(result.getInt("id"));
-            user.setName(result.getString("name"));
-            user.setJob(result.getString("job"));
-
-            users.add(user);
+        for (Route entity : routes) {
+            System.out.println(entity);
         }
+
+        // save Route
+        /*Route route = new Route();
+        route.setNumber(546);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        route.setArrival_date(dateFormat.parse("2024-03-24 17:00:00"));
+        route.setDeparture_date(dateFormat.parse("2024-03-24 20:00:00"));
+        route.setArrival_city_id(3);
+        route.setDeparture_city_id(4);
+        route.setRoute_time(Time.valueOf(LocalTime.of(3, 00)));
+        route.setPlane_id(2);
+        route.setStat("planned");
+        route.setPrice(587);
+
+        routeDao.save(route);*/
+
+        //delete by Id
+        routeDao.deleteById(10);
+
+        //UserDao userDao = new UserDaoImpl();
+
+        //  List<User> user = userDao.getAll();
+
+        // User user = userDao.getById(2);
+
+        //List<User> user = userDao.getAllWithTicket();
+
+       /* User user = new User();
+        user.setName("Vladimir");
+        user.setJob("Customer");
+        userDao.save(user);*/
+
+        // userDao.deleteById(9);
 
         System.out.println("Hello world!");
     }
